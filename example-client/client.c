@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
         "gs-scheduler "BUILD_VERSION" (built "BUILD_DATE")\n"
         "Phil Crump 2017\n"
     );
-    
+
     int opt, c;
     static const struct option long_options[] = {
         { "version",     no_argument,       0, 'V' },
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
         switch(c)
         {
             case 'c':
-                strncpy(config_filename, optarg, 100); 
+                strncpy(config_filename, optarg, 100);
                 break;
             case '?':
             default:
@@ -90,7 +90,7 @@ int main(int argc, char *argv[])
     PGconn *conn = PQconnectdb(config.db_conn_string);
 
     if (PQstatus(conn) == CONNECTION_BAD) {
-        
+
         fprintf(stderr, "Connection to database failed: %s\n",
             PQerrorMessage(conn));
         PQfinish(conn);
@@ -106,8 +106,8 @@ int main(int argc, char *argv[])
         print_next_point(conn);
         sleep(1);
     }
- 
+
     PQfinish(conn);
-    
+
     return 0;
 }

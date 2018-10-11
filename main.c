@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
         "gs-scheduler "BUILD_VERSION" (built "BUILD_DATE")\n"
         "Phil Crump 2017\n"
     );
-    
+
     int opt, c;
     static const struct option long_options[] = {
         { "version",     no_argument,       0, 'V' },
@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
         switch(c)
         {
             case 'c':
-                strncpy(config_filename, optarg, 100); 
+                strncpy(config_filename, optarg, 100);
                 break;
             case '?':
             default:
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
     PGconn *conn = PQconnectdb(config.db_conn_string);
 
     if (PQstatus(conn) == CONNECTION_BAD) {
-        
+
         fprintf(stderr, "Connection to database failed: %s\n",
             PQerrorMessage(conn));
         PQfinish(conn);
@@ -76,17 +76,17 @@ int main(int argc, char *argv[])
 
     printf("Updating TLEs from celestrak..\n");
     tle_update_http(conn);
-    
+
     printf("Updating TLEs from spacetrack..\n");
     tle_update_spacetrack(conn, config.spacetrack_user, config.spacetrack_passwd);
 
     printf("Updating Tracks..\n");
-    track_update_all(conn); 
+    track_update_all(conn);
 
     printf("Updating Schedule..\n");
     schedule_update_all(conn);
-    
+
     PQfinish(conn);
-    
+
     return 0;
 }

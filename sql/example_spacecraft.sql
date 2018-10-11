@@ -1,7 +1,7 @@
-\c "gs-scheduler";
-INSERT INTO spacecraft 
+\c gs_scheduler;
+INSERT INTO spacecraft
   (name, priority, frequency_downlink, frequency_uplink, tle_source_type, tle_source_url, tle_spacecraft_uri)
-  VALUES 
+  VALUES
   (
     'ISS', 1, 145.8, 145.3, 'spacetrack', 'https://www.space-track.org/basicspacedata/query/class/tle_latest/NORAD_CAT_ID/25544/ORDINAL/1/EPOCH/%3Enow-30/format/3le', '0 ISS (ZARYA)'
   )

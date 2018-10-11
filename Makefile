@@ -32,4 +32,3 @@ all:
 
 clean:
 	rm -fv *.o $(BIN)
-
