@@ -1,10 +1,10 @@
-DROP DATABASE IF EXISTS gs_scheduler;
+DROP DATABASE IF EXISTS "gs_scheduler";
 DROP USER IF EXISTS phil;
 
-CREATE DATABASE gs_scheduler;
+CREATE DATABASE "gs_scheduler";
 CREATE USER phil;
 
-\c gs_scheduler;
+\c "gs_scheduler";
 
 CREATE TYPE tle_source_enum AS ENUM ('http', 'spacetrack');
 

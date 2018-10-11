@@ -1,4 +1,4 @@
-\c gs_scheduler;
+\c "gs_scheduler";
 INSERT INTO spacecraft
   (name, priority, frequency_downlink, frequency_uplink, tle_source_type, tle_source_url, tle_spacecraft_uri)
   VALUES
