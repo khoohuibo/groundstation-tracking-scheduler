@@ -1,8 +1,8 @@
 [Database]
-host=unix
+host=localhost
 database=gs-scheduler
-user=phil
-password=
+user=hubert
+password=cubesat
 
 [Spacetrack]
 user=phil
