@@ -1,8 +1,8 @@
 DROP DATABASE IF EXISTS "gs-scheduler";
-DROP USER IF EXISTS phil;
+DROP USER IF EXISTS hubert;
 
 CREATE DATABASE "gs-scheduler";
-CREATE USER phil;
+CREATE USER hubert;
 
 \c "gs-scheduler";
 
@@ -76,4 +76,4 @@ CREATE table schedule_meta
 
 INSERT into schedule_meta (updated) VALUES (timestamp 'epoch');
 
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO phil;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO hubert;
